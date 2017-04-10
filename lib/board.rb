@@ -18,7 +18,7 @@ class Board
   end
 
   def taken?(input)
-    position[input] != " " || position[input] != ""
+    position(input) != " " && position(input) != ""
   end
 
   def position(input)
@@ -38,11 +38,11 @@ class Board
 
   def turn_count
     cells.count do |token|
-      token == "X" || token == "o"
+      token == "X" || token == "O"
     end
   end
 
   def valid_move?(input)
-    input.between?(0,8) && !taken?(input)
+    input.to_i.between?(1,9) && !taken?(input)
   end
 end
