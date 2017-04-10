@@ -26,7 +26,8 @@ class Board
   end
 
   def update(input, player)
-    cells[input.to_i - 1] = player.token
+    cells[input.to_i - 1] = player.token # Human subclass inherits from Player class. In Human subclass it
+    # asks user to input "1-9" while inheriting the #token method from the Player class.
   end
 
   def full?
@@ -46,3 +47,6 @@ class Board
     input.to_i.between?(1,9) && !taken?(input)
   end
 end
+
+#board = Board.new
+#board.display
