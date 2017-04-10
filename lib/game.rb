@@ -12,6 +12,13 @@ class Game
     [6,4,2]  # diagonal (bottom left to top right)
   ]
 
+  def initialize(player_1 = Players::Human.new("X"), player_2 = Players::Human.new("O"), board = Board.new)
+    # create new instances of Human and Board
+    @board = board
+    @player_1 = player_1
+    @player_2 = player_2
+  end
+
   # board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
   # board = ["X", " ", "X", " ", "X", " ", "O", "O", " "] # game in progress
   # board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"] # draw
